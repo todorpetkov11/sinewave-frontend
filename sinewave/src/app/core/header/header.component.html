@@ -1,0 +1,65 @@
+<header class="header-main">
+    <div class="header-nav item">
+        <div class="header-nav-wrapper">
+            <nav class="header-nav-list">
+                <div class="header-nav-item header-nav-item-active">
+                    <a href="/shop">
+                        Shop
+                    </a>
+                </div>
+                <div class="header-nav-item">
+                    <a href="/about">
+                        About
+                    </a>
+                </div>
+                <div class="header-nav-item">
+                    <a href="/contact">
+                        Contact
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="header-title-text item">
+        <a id="site-title" href="/">Sinewave</a>
+    </div>
+    <div class="header-actions item">
+        <div class="header-socials">
+            <fa-icon [icon]="instagram"></fa-icon>
+            <fa-icon [icon]="twitter"></fa-icon>
+        </div>
+        <div class="header-actions-action">
+            <fa-icon [icon]="cart"></fa-icon>
+        </div>
+        <div class="header-actions-action bars" (click)="onBarsClick()">
+            <fa-icon [ngClass]="navIsVisible ? 'rotated' : ''" class="action-show-nav" [icon]="bars"></fa-icon>
+        </div>
+    </div>
+</header>
+
+
+<div [ngClass]="navIsVisible ? 'visible' : ''" class="header-nav-mobile">
+    <div class="header-nav-mobile-wrapper">
+        <nav class="header-nav-mobile-list">
+            <div class="header-nav-mobile-item header-nav-item-active">
+                <a href="/shop">
+                    Shop
+                </a>
+            </div>
+            <div class="header-nav-mobile-item">
+                <a href="/about">
+                    About
+                </a>
+            </div>
+            <div class="header-nav-mobile-item">
+                <a href="/contact">
+                    Contact
+                </a>
+            </div>
+        </nav>
+        <div class="header-mobile-socials">
+            <fa-icon [icon]="instagram"></fa-icon>
+            <fa-icon [icon]="twitter"></fa-icon>
+        </div>
+    </div>
+</div>

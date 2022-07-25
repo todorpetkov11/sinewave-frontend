@@ -1,0 +1,33 @@
+
+.grid-item {
+    margin-bottom: 1rem;
+}
+
+.grid-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.sqs-money-native::before {
+    content: '$ ';
+}
+
+.grid-image-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.grid-item-image {
+    max-height:100%;
+    max-width:100%;
+    object-fit: cover;
+}
+
+.grid-image-cover {
+    position: absolute;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.grid-image-cover:hover {
+    opacity: 0;
+}

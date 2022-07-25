@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito');
+
+a, div {
+    font-family: Nunito;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
