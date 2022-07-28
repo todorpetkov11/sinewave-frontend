@@ -1,8 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito');
 
-a, div {
+a{
     font-family: Nunito;
     text-decoration: none;
     color: black;
     cursor: pointer;
+}
+
+p, div {
+    font-family: Nunito;
+    color: black;
+}
+
+em {
+    font-style: italic
+}
+
+strong {
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
 }
