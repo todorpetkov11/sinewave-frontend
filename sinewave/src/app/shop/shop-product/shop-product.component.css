@@ -1,6 +1,7 @@
 
 .grid-item {
     margin-bottom: 1rem;
+    cursor: pointer;
 }
 
 .grid-title {

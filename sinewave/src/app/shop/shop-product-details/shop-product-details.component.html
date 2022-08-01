@@ -1,5 +1,5 @@
-<section class="product-summary" data-controller="ProductGallery" data-controllers-bound="ProductGallery">
-    <section aria-label="Gallery" class="product-gallery enable-slide-animations" data-product-gallery="container">
+<section class="product-summary">
+    <section aria-label="Gallery" class="product-gallery">
 
         <!-- <div class="product-gallery-scroll">
             <div aria-label="Gallery thumbnails" class="product-gallery-thumbnails" data-animation-role="image"
@@ -43,16 +43,16 @@
         </div> -->
 
 
-        <div class="product-gallery-slides" data-animation-role="image" data-product-gallery="slides">
+        <div class="product-gallery-slides">
 
-            <div class="product-gallery-carousel-controls">
+            <!-- <div class="product-gallery-carousel-controls">
                 <button class="product-item-gallery-carousel-control product-gallery-prev">
                 </button>
                 <button class="product-item-gallery-carousel-control product-gallery-next">
                 </button>
-            </div>
+            </div> -->
 
-            <div class="product-gallery-current-slide-indicator enable-on-first-image-load enabled">1 / 3</div>
+            <!-- <div class="product-gallery-current-slide-indicator enable-on-first-image-load enabled">1 / 3</div> -->
 
             <div class="product-gallery-slides-item">
                 <img class="product-gallery-slides-item-image"
@@ -77,11 +77,14 @@
                     Image 3 of 3
                 </span>
             </div>
+            <!-- <ng-image-slider [images]="imageObject" [animationSpeed]='0.5'
+                [imageSize]="{ width: '100%', height: '500px', space: 0}" [slideImage]="1" [infinite]=true
+                [manageImageRatio]=true [imagePopup]=false></ng-image-slider> -->
         </div>
 
     </section>
 
-    <section class="product-details product-details">
+    <section class="product-details">
         <h1 class="product-details-title">
             The Original Book
         </h1>

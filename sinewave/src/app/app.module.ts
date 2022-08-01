@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgImageSliderModule } from 'ng-image-slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
@@ -14,6 +15,7 @@ import { ShopModule } from './shop/shop.module';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
+    NgImageSliderModule,
     CoreModule,
     ShopModule
   ],

@@ -1,10 +1,16 @@
 .button-primary {
-    border: solid 1px black;
-    border-radius: 2rem;
     cursor: pointer;
 }
 
 .button-primary-inner {
     padding: 1rem;
+    border: solid 1px black;
     text-align: center;
+    border-radius: 2rem;
+    transition: 0.2s ease-in-out;
+}
+
+.button-primary-inner:hover {
+    color: white;
+    background-color: black;
 }

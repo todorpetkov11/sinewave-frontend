@@ -8,8 +8,7 @@
 }
 
 .product-gallery-slides {
-    position: relative;
-    display: flex;
+    width: 100%;
 }
 
 .product-gallery-carousel-controls {
@@ -57,4 +56,21 @@
 
 .product-gallery-slides-item.loaded {
     display: none;
+}
+
+
+@media (min-width: 765px) {
+    .product-summary {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .product-gallery {
+        text-align: center;
+    }
+
+    .product-gallery, .product-details {
+        width: 50%;
+    }
 }
