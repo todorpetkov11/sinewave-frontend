@@ -6,6 +6,7 @@ import { ShopProductDetailsComponent } from './shop-product-details/shop-product
 import { ImageSlideDirective } from './directives/image-slide.directive';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { ShopRoutingModule } from './shop-routing.module';
+import { ShopProductRelatedComponent } from './shop-product-related/shop-product-related.component';
 
 
 
@@ -15,7 +16,8 @@ import { ShopRoutingModule } from './shop-routing.module';
     ShopMainComponent,
     ShopProductComponent,
     ShopProductDetailsComponent,
-    ImageSlideDirective
+    ImageSlideDirective,
+    ShopProductRelatedComponent
   ],
   imports: [
     CommonModule,
