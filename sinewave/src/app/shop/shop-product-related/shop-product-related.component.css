@@ -1,0 +1,49 @@
+.raleted-title {
+    margin: 10rem 0 3rem 0;
+}
+
+.product-title, .product-product-price {
+    font-size: 1.3rem;
+    margin: 0.7rem 0;
+}
+
+.list-grid {
+    display: grid;
+    grid-template-columns: 1;
+    grid-column-gap: 1vw;
+    grid-row-gap: 3.5vw;
+    padding: 0;
+}   
+
+.grid-item {
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.grid-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.grid-image-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.grid-image {
+    max-height:100%;
+    max-width:100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.grid-image-cover {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.grid-image-cover:hover {
+    opacity: 0;
+}

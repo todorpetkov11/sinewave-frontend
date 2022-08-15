@@ -7,10 +7,6 @@
     display: none;
 }
 
-.money::before {
-    content: '$';
-}
-
 .product-gallery-slides {
     width: 100%;
     position: relative;
@@ -69,10 +65,19 @@
     object-position: 50% 50%;
     object-fit: cover;
     opacity: 1;
-    transition: 0.2s ease-in-out;
+    animation-name: imageEnter;
+    animation-duration: 2s;
 }
 
-.product-gallery-slides-item-image.loaded {
+/* @keyframes imageEnter {
+    0%   {left:0px; top:0px;}
+    25%  {left: 100px; top:0px;}
+    50%  {left:200px; top:100px;}
+    75%  {left:0px; top:200px;}
+    100% {left:0px; top:0px;}
+} */
+
+.product-gallery-slides-item-image.not-loaded {
     display: none;
     opacity: 0;
     transition: 0.2s ease-in-out;
