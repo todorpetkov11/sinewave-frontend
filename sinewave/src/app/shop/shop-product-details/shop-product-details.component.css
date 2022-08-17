@@ -83,14 +83,6 @@
     transition: 0.2s ease-in-out;
 }
 
-
-button {
-    outline: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-
 .product-gallery-thumbnails {
     display: flex;
     gap: 0.4rem

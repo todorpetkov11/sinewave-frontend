@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as Aos from 'aos';
 
 @Component({
   selector: 'app-shop-product-details',
@@ -10,7 +11,7 @@ export class ShopProductDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
+    Aos.init()
   }
 
   imageIndex: number = 0;

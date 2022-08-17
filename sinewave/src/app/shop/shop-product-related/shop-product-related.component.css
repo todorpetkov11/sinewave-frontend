@@ -47,3 +47,13 @@
 .grid-image-cover:hover {
     opacity: 0;
 }
+
+@media (min-width: 765px) {
+    .list-grid {
+        display: grid;
+        grid-template-columns: repeat(4,minmax(0,2fr));
+        grid-column-gap: 1vw;
+        grid-row-gap: 3.5vw;
+        padding: 0;
+    }   
+}

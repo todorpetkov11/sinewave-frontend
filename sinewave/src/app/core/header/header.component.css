@@ -39,13 +39,14 @@
     position: absolute;
     visibility: hidden;
     z-index: 1000;
-    width: calc(100% - var(--side-padding));
+    width: 100%;
     display: flex;
     background-color: white;
     flex-direction: column;
     text-align: center;
     transition: 0.4s ease-in-out;
     opacity: 0;
+    left: 0;
 }
 
 .header-nav-mobile.visible {

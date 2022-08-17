@@ -1,0 +1,41 @@
+.sections {
+    padding: 2rem 0;
+}
+
+.content {
+    color: white;
+    font-size: 0.8rem;
+}
+
+
+.nav-lists {
+    display: flex;
+    gap: 50%;
+    margin-bottom: 2rem;
+}
+
+.list-item {
+    margin-bottom: 1rem;
+}
+
+.list-item a {
+    color: white;
+    text-decoration: underline;
+}
+
+.newsletter-form-body > * {
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+@media (min-width: 775px) {
+    .content {
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+    }
+
+    .nav-lists {
+        display: grid;
+        grid-template-columns: repeat(2, 1%);
+    }
+}

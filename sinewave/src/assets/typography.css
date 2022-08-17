@@ -7,9 +7,8 @@ a{
     cursor: pointer;
 }
 
-p, div {
+div {
     font-family: Nunito;
-    color: black;
 }
 
 em {
@@ -25,6 +24,6 @@ p {
     line-height: 1.5;
 }
 
-h2 {
+h1 {
     font-size: 2.5rem;
 }

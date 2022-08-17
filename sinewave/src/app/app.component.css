@@ -2,4 +2,20 @@
     padding: 0 var(--side-padding);
     position: relative;
     max-width: 100%;
+    animation-name: onLoad;
+    animation-duration: 0.8s;
+}
+
+@keyframes onLoad {
+    0%   {opacity: 0;}
+    /* 25%  {top: -200px; opacity: 0.2;}
+    50%  {top: -100px; opacity: 0.4;}
+    75%  {top: -25px; opacity: 0.8;} */
+    100% {top: 0px; opacity: 1;}
+}
+
+.content-wrapper.footer {
+    background-color: black;
+    width: 100%;
+    box-sizing: border-box;
 }
