@@ -29,10 +29,16 @@
             <fa-icon [icon]="twitter"></fa-icon>
         </div>
         <div class="header-actions-action">
-            <fa-icon [icon]="cart"></fa-icon>
+            <div class="cart-wrapper">
+                <span class="cart-items-count">{{cartCount}}</span>
+                <fa-icon [icon]="cart"></fa-icon>
+            </div>
         </div>
         <div class="header-actions-action bars" (click)="onBarsClick()">
-            <fa-icon [ngClass]="navIsVisible ? 'rotated' : ''" class="action-show-nav" [icon]="bars"></fa-icon>
+            <div class="burger-box" >
+                <div class="burger-line top" [ngClass]="navIsVisible ? 'active' : ''" ></div>
+                <div class="burger-line bottom" [ngClass]="navIsVisible ? 'active' : ''" ></div>
+            </div>
         </div>
     </div>
 </header>

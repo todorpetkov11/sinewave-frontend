@@ -25,6 +25,9 @@
     font-weight: bolder;
 }
 
+.list-grid {
+    min-height: 100vh;
+}
 
 @media (min-width: 475px) {
     .shop-nav-mobile {

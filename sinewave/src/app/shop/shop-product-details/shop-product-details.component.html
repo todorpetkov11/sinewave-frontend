@@ -38,7 +38,7 @@
     </section>
 
     <section class="product-details">
-        <h1 class="product-details-title">
+        <h1 class="product-details-title" #bookName>
             The Original Book
         </h1>
         <div class="product-details-checkout">
@@ -50,10 +50,10 @@
 
             <div class="product-quantity-input">
                 <div class="quantity-label">Quantity:</div>
-                <input aria-label="Quantity" size="4" max="9999" min="1" value="1" type="number" step="1">
+                <input aria-label="Quantity" #quantity size="4" max="9999" min="1" value="1" type="number" step="1">
             </div>
 
-            <div class="button-primary">
+            <div class="button-primary" (click)="addToCart(quantity.value, bookName.innerHTML)">
                 <div class="button-primary-inner">Add To Cart</div>
             </div>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Aos from 'aos';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-shop-product-details',
@@ -8,7 +9,7 @@ import * as Aos from 'aos';
 })
 export class ShopProductDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     Aos.init()
@@ -36,6 +37,10 @@ export class ShopProductDetailsComponent implements OnInit {
 
   imageClick(index: number) {
     this.imageIndex = index
+  }
+
+  addToCart(quantity: string, bookName: string) {
+    this.cartService.addToCart(quantity, bookName)
   }
 
 
