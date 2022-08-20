@@ -22,15 +22,39 @@ button {
     padding: 0;
     cursor: pointer;
     padding: 1rem;
-    border: solid 1px white;
+    border: solid 1px black;
     text-align: center;
     border-radius: 2rem;
     transition: 0.2s ease-in-out;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 button:hover {
     color: black;
     background-color: white;
+    border-color:black;
+}
+
+button.danger:hover {
+    color: white;
+    background-color: red;
+    border-color:red;
+}
+
+button.accept:hover {
+    color: white;
+    background-color: green;
+    border-color:green;
+}
+
+button.finish:hover {
+    color: white;
+    background-color: darkorange;
+    border-color:darkorange;
+}
+
+button.images {
+    border: none;
+    background-color: none;
 }

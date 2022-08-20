@@ -1,3 +1,9 @@
+<div class="cart-notification" [ngClass]="itemAdded ? 'active' : ''">
+    <span>Item added to cart!</span>
+    <button class="danger" id="remove-from-cart" (click)="removeFromCartPopUp()">
+        <span>Remove</span>
+    </button>
+</div>
 <section class="product-summary" data-aos="zoom-out" data-aos-duration="1000">
     <section aria-label="Gallery" class="product-gallery">
 
@@ -26,7 +32,7 @@
 
                 <ng-template ngFor let-image let-i="index" [ngForOf]="productImages">
 
-                    <button class="product-gallery-thumbnails-item not-loaded" (click)="imageClick(i)">
+                    <button class="product-gallery-thumbnails-item not-loaded images" (click)="imageClick(i)">
                         <img class="product-gallery-thumbnails-item-image"
                             style="width: 100%; height: 100%; object-position: 50% 50%;" [src]="image.image" alt="">
                     </button>
@@ -53,9 +59,9 @@
                 <input aria-label="Quantity" #quantity size="4" max="9999" min="1" value="1" type="number" step="1">
             </div>
 
-            <div class="button-primary" (click)="addToCart(quantity.value, bookName.innerHTML)">
-                <div class="button-primary-inner">Add To Cart</div>
-            </div>
+            <button class="accept" (click)="addToCart(quantity.value, bookName.innerHTML)">
+                <span>Add To Cart</span>
+            </button>
 
             <div class="product-details-excerpt">
                 <p class=""></p>

@@ -16,6 +16,7 @@ export class ShopProductDetailsComponent implements OnInit {
   }
 
   imageIndex: number = 0;
+  public itemAdded: boolean = false;
 
   prevClick() {
     if (this.imageIndex == 0) {
@@ -41,8 +42,16 @@ export class ShopProductDetailsComponent implements OnInit {
 
   addToCart(quantity: string, bookName: string) {
     this.cartService.addToCart(quantity, bookName)
+    this.itemAdded = true;
+    setTimeout(() => {
+      this.itemAdded = false;
+    }, 10000)
   }
 
+  removeFromCartPopUp() {
+    this.cartService.removeFromCartPopUp()
+    this.itemAdded = false;
+  }
 
   productImages = [{
     image: 'https://images.squarespace-cdn.com/content/v1/624b503a204884599f31416a/1649102914874-6YLWE3UUH9U8RK1UD78Z/The-Original-Book_3.jpg?format=1500w',

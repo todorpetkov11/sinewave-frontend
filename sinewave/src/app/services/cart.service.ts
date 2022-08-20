@@ -12,12 +12,17 @@ export class CartService {
   constructor() { }
 
   getCartCount() {
-    this.updateCartItems()
+    this.updateCartCount()
     return this.totalItems$;
   }
 
-  updateCartItems() {
-    this.totalItems.next(this.getCart().length);
+  updateCartCount() {
+    if (this.getCart() == null) {
+      this.totalItems.next(0);
+    }
+    else {
+      this.totalItems.next(this.getCart().length);
+    }
   }
 
   getCart() {
@@ -29,26 +34,35 @@ export class CartService {
     }
   }
 
-  createCart(cartArray: string[]) {
+  removeFromCartPopUp() {
+    let cart = this.getCart()
+    cart.pop()
+    this.createUpdateCart(cart)
+    this.updateCartCount()
+
+    // TODO: Can remove one one that has a quantity of 2 and more
+  }
+
+  createUpdateCart(cartArray: string[]) {
     localStorage.setItem('cart', JSON.stringify(cartArray))
   }
 
-  addToCart(quantity: string, bookName: string) {
+  addToCart(quantity: string, itemId: string) {
     if (this.getCart() == null) {
       let cartArray = []
       for (let i = 0; i < Number(quantity); i++) {
-        cartArray.push(bookName)
+        cartArray.push(itemId)
       }
-      this.createCart(cartArray)
+      this.createUpdateCart(cartArray)
     }
     else {
       let cartArray = this.getCart()
       for (let i = 0; i < Number(quantity); i++) {
-        cartArray.push(bookName)
+        cartArray.push(itemId)
       }
-      this.createCart(cartArray)
+      this.createUpdateCart(cartArray)
     }
-    this.updateCartItems()
+    this.updateCartCount()
   }
 
 }
