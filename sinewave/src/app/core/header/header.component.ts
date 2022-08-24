@@ -34,6 +34,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.navIsVisible = !this.navIsVisible
   }
 
+  closeMenuOnSelect() {
+    this.navIsVisible = false
+  }
+
   ngOnDestroy() {
     this.cartSub.unsubscribe();
   }

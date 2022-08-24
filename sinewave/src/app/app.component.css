@@ -4,6 +4,7 @@
     max-width: 100%;
     animation-name: onLoad;
     animation-duration: 0.8s;
+    min-height: 100vh;
 }
 
 @keyframes onLoad {
@@ -14,8 +15,10 @@
     100% {top: 0px; opacity: 1;}
 }
 
-.content-wrapper.footer {
+.content-wrapper-footer {
+    padding: 0 var(--side-padding);
     background-color: black;
     width: 100%;
     box-sizing: border-box;
+    max-height: fit-content;
 }
