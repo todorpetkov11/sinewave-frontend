@@ -5,6 +5,7 @@ import { NgImageSliderModule } from 'ng-image-slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { PagesModule } from './pages/pages.module';
 import { ShopModule } from './shop/shop.module';
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ShopModule } from './shop/shop.module';
     FontAwesomeModule,
     NgImageSliderModule,
     CoreModule,
-    ShopModule
+    ShopModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

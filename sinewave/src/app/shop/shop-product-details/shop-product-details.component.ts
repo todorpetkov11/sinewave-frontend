@@ -41,7 +41,7 @@ export class ShopProductDetailsComponent implements OnInit {
   }
 
   addToCart(quantity: string, bookName: string) {
-    this.cartService.addToCart(quantity, bookName)
+    this.cartService.addToCart(Number(quantity), bookName)
     this.itemAdded = true;
     setTimeout(() => {
       this.itemAdded = false;

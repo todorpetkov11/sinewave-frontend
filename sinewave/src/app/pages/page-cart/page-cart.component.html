@@ -2,57 +2,65 @@
     <h1 class="cart-title">
         Shopping cart
     </h1>
-
-    <section class="cart-container">
-        <div class="prodcut-wrapper">
-            <div class="product-image">
-                <img class="product-image-image"
-                    src="https://images.squarespace-cdn.com/content/v1/624b503a204884599f31416a/1649102914874-6YLWE3UUH9U8RK1UD78Z/The-Original-Book_3.jpg"
-                    alt="">
-            </div>
-
-            <div class="product-title"><a class="_nNnRZGNjvGl9160s5H2 cart-row-title css-b3eyut"
-                    href="/shop/p/the-original-book">The Original
-                    Book</a>
-            </div>
-
-            <div class="product-quantity-controls">
-                <button class="clean">
-                    <div class="controls-wrapper">
-                        <div class="line remove"></div>
+    <div *ngIf="cart.length == 0" class="cart-empty" data-aos="fade-in" data-aos-duration="700">
+        <p class="empty-text">Cart's empty!</p>
+        <button routerLink="/shop">Shop here</button>
+    </div>
+    <div *ngIf="cart.length > 0" data-aos="fade-in" data-aos-duration="700">
+        <ng-template ngFor let-item let-i="index" [ngForOf]="cart">
+            <section class="cart-container">
+                <div class="prodcut-wrapper">
+                    <div class="product-image">
+                        <img class="product-image-image"
+                            src="https://images.squarespace-cdn.com/content/v1/624b503a204884599f31416a/1649102914874-6YLWE3UUH9U8RK1UD78Z/The-Original-Book_3.jpg"
+                            alt="">
                     </div>
-                </button>
-                <span class="quantity">2</span>
-                <button class="clean">
-                    <div class="controls-wrapper">
-                        <div class="line add-horizontal"></div>
-                        <div class="line add-vertical"></div>
+
+                    <div class="product-title"><a class="_nNnRZGNjvGl9160s5H2 cart-row-title css-b3eyut"
+                            href="/shop/p/the-original-book">{{item.id}}</a>
                     </div>
-                </button>
 
-            </div>
+                    <div class="product-quantity-controls">
+                        <button class="clean" (click)="subQuantity(i)">
+                            <div class="controls-wrapper">
+                                <div class="line remove"></div>
+                            </div>
+                        </button>
+                        <span class="quantity">{{item.quantity}}</span>
+                        <button class="clean" (click)="addQuantity(i)">
+                            <div class="controls-wrapper">
+                                <div class="line add-horizontal"></div>
+                                <div class="line add-vertical"></div>
+                            </div>
+                        </button>
 
-            <span class="money">45.00</span>
-            <div class="remove-wrapper">
-                <button class="clean">
-                    <div class="remove-from-cart-wrapper">
-                        <div class="line top"></div>
-                        <div class="line bottom"></div>
                     </div>
+
+                    <span class="money">45.00</span>
+                    <div class="remove-wrapper">
+                        <button class="clean" (click)="removeFromCart(i)">
+                            <div class="remove-from-cart-wrapper">
+                                <div class="line top"></div>
+                                <div class="line bottom"></div>
+                            </div>
+                        </button>
+                    </div>
+
+                </div>
+
+            </section>
+        </ng-template>
+        <div>
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <span class="money" id="subtotal">45</span>
+            </div>
+            <div class="checkout-btn-wrapper">
+                <button class="checkout-btn finish">
+                    Checkout
                 </button>
             </div>
-
         </div>
-        <div class="subtotal">
-            <span>Subtotal</span>
-            <span class="money" id="subtotal">45</span>
-        </div>
-        <div class="checkout-btn-wrapper">
-            <button class="checkout-btn finish">
-                Checkout
-            </button>
-        </div>
+    </div>
 
-
-    </section>
 </div>

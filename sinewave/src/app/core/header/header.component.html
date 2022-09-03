@@ -2,17 +2,20 @@
     <div class="header-nav item">
         <div class="header-nav-wrapper">
             <nav class="header-nav-list">
-                <div class="header-nav-item" routerLinkActive="header-nav-item header-nav-item-active">
+                <div class="header-nav-item" routerLinkActive="header-nav-item header-nav-item-active" data-aos="zoom-in" data-aos-duration="300"
+                data-aos-delay="300">
                     <a routerLink="/shop">
                         Shop
                     </a>
                 </div>
-                <div class="header-nav-item" routerLinkActive="header-nav-item header-nav-item-active">
+                <div class="header-nav-item" routerLinkActive="header-nav-item header-nav-item-active" data-aos="zoom-in" data-aos-duration="300"
+                data-aos-delay="400">
                     <a routerLink="/about">
                         About
                     </a>
                 </div>
-                <div class="header-nav-item" routerLinkActive="header-nav-item header-nav-item-active">
+                <div class="header-nav-item" routerLinkActive="header-nav-item header-nav-item-active" data-aos="zoom-in" data-aos-duration="300"
+                data-aos-delay="500">
                     <a routerLink="/contact">
                         Contact
                     </a>
@@ -20,15 +23,18 @@
             </nav>
         </div>
     </div>
-    <div class="header-title-text item">
+    <div class="header-title-text item" data-aos="zoom-in" data-aos-duration="300"
+    data-aos-delay="600">
         <a id="site-title" routerLink="/home">Sinewave</a>
     </div>
     <div class="header-actions item">
-        <div class="header-socials">
+        <div class="header-socials" data-aos="zoom-in" data-aos-duration="300"
+        data-aos-delay="700">
             <fa-icon [icon]="instagram"></fa-icon>
             <fa-icon [icon]="twitter"></fa-icon>
         </div>
-        <div routerLink="/cart" class="header-actions-action">
+        <div routerLink="/cart" class="header-actions-action" data-aos="zoom-in" data-aos-duration="300"
+        data-aos-delay="800">
             <div class="cart-wrapper">
                 <span class="cart-items-count">{{cartCount}}</span>
                 <fa-icon [icon]="cart"></fa-icon>
@@ -47,17 +53,17 @@
 <div [ngClass]="navIsVisible ? 'visible' : ''" class="header-nav-mobile">
     <div class="header-nav-mobile-wrapper">
         <nav class="header-nav-mobile-list">
-            <div class="header-nav-mobile-item" routerLinkActive="header-nav-item-active" (click)="closeMenuOnSelect()">
+            <div class="header-nav-mobile-item" routerLinkActive="header-mobile-nav-item-active" (click)="closeMenuOnSelect()">
                 <a routerLink="/shop">
                     Shop
                 </a>
             </div>
-            <div class="header-nav-mobile-item" routerLinkActive="header-nav-item-active" (click)="closeMenuOnSelect()">
+            <div class="header-nav-mobile-item" routerLinkActive="header-mobile-nav-item-active" (click)="closeMenuOnSelect()">
                 <a routerLink="/about">
                     About
                 </a>
             </div>
-            <div class="header-nav-mobile-item" routerLinkActive="header-nav-item-active" (click)="closeMenuOnSelect()">
+            <div class="header-nav-mobile-item" routerLinkActive="header-mobile-nav-item-active" (click)="closeMenuOnSelect()">
                 <a routerLink="/contact">
                     Contact
                 </a>

@@ -3,6 +3,7 @@ import { faBars, faCartShopping, faX } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { CartService } from 'src/app/services/cart.service';
 import { Observable, Subscription } from 'rxjs';
+import * as Aos from 'aos';
 
 @Component({
   selector: 'app-header',
@@ -24,6 +25,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private cartSub!: Subscription;
 
   ngOnInit() {
+    Aos.init()
     this.cartSub = this.cartService.getCartCount()
       .subscribe(value => {
         this.cartCount = value;

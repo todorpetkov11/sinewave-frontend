@@ -30,16 +30,20 @@ button {
     color: black;
 }
 
+button:hover {
+    color: white;
+    background-color: black;
+    border-color:black;
+}
+
 button.clean {
     border: none;
     margin: 0 1rem;
     padding: 0;
 }
 
-button:hover {
-    color: black;
-    background-color: white;
-    border-color:black;
+button.clean:hover {
+    background-color: unset;
 }
 
 button.danger:hover {

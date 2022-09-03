@@ -21,7 +21,7 @@
             </div>
 
             <ng-template ngFor let-image let-i="index" [ngForOf]="productImages">
-                <img class="product-gallery-slides-item-image"
+                <img class="product-gallery-slides-item-image" 
                     [ngClass]="{'': i == imageIndex, 'not-loaded': i != imageIndex}" [src]="image.image" alt="">
 
             </ng-template>

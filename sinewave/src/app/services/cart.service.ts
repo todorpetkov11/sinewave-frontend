@@ -38,16 +38,22 @@ export class CartService {
     let cart = this.getCart()
     cart.pop()
     this.createUpdateCart(cart)
-    this.updateCartCount()
 
     // TODO: Can remove one one that has a quantity of 2 and more
   }
 
-  createUpdateCart(cartArray: {}[]) {
-    localStorage.setItem('cart', JSON.stringify(cartArray))
+  removeFromCart(id: number) {
+    let cart = this.getCart()
+    cart.splice(id)
+    this.createUpdateCart(cart)
   }
 
-  addToCart(quantity: string, itemId: string) {
+  createUpdateCart(cartArray: {}[]) {
+    localStorage.setItem('cart', JSON.stringify(cartArray))
+    this.updateCartCount();
+  }
+
+  addToCart(quantity: number, itemId: string) {
     if (this.getCart() == null) {
       let cartArray = [{
         'id': itemId,
@@ -65,7 +71,6 @@ export class CartService {
 
       this.createUpdateCart(cartArray)
     }
-    this.updateCartCount()
   }
 
 }
