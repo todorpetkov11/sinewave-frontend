@@ -1,25 +1,24 @@
-<div class="grid-item" routerLink="p/1">
-    <a href="/shop/p/untitled-no37" aria-label="Untitled No.37" class="grid-item-link"></a>
+<div class="grid-item" routerLink="p/{{album.id}}">
+    <a class="grid-item-link"></a>
 
 
     <div class="grid-image-wrapper">
 
-        <img class="grid-item-image grid-image-cover"
-            src="https://images.squarespace-cdn.com/content/v1/624b503a204884599f31416a/1649102914266-WP0BDOWKBRLC1ENBN43B/Untiltled-No.37_1.jpg?format=1000w">
+        <img class="grid-item-image grid-image-cover" [src]="album.firstImage">
 
-        <img alt="Untitled-No.37_t.jpg" class="grid-item-image grid-image-hover"
-            src="https://images.squarespace-cdn.com/content/v1/624b503a204884599f31416a/1649102914253-L5IADFRRFPSI97CYMBUC/Untitled-No.37_t.jpg?format=1000w">
+        <img class="grid-item-image grid-image-hover" [src]="album.secondImage">
     </div>
     <section class="grid-meta-wrapper">
         <div class="grid-main-meta">
 
             <div class="grid-title" data-test="plp-grid-title">
-                Untitled No.37
+                <h2>{{album.name}}</h2>
             </div>
-            <div class="grid-prices" data-test="plp-grid-prices">
-                <div class="product-price">
-                    <span class="sqs-money-native">50.00</span>
-                </div>
+            <div class="grid-subtitle">
+                <p>{{album.artist}}</p>
+            </div>
+            <div class="product-price">
+                <span class="money">{{album.price}}</span>
             </div>
         </div>
     </section>

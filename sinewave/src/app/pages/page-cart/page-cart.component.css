@@ -201,6 +201,7 @@
     .checkout-btn-wrapper {
         display: flex;
         justify-content: flex-end;
+        margin-bottom: 3rem;
     }
 
     .checkout-btn {

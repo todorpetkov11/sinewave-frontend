@@ -40,8 +40,9 @@
                 <fa-icon [icon]="cart"></fa-icon>
             </div>
         </div>
-        <div class="header-actions-action bars" (click)="onBarsClick()">
-            <div class="burger-box" >
+        <div class="header-actions-action bars" (click)="onBarsClick()" data-aos="zoom-in" data-aos-duration="300"
+        data-aos-delay="900">
+            <div class="burger-box">
                 <div class="burger-line top" [ngClass]="navIsVisible ? 'active' : ''" ></div>
                 <div class="burger-line bottom" [ngClass]="navIsVisible ? 'active' : ''" ></div>
             </div>

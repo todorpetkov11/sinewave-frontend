@@ -21,8 +21,8 @@
             </div>
 
             <ng-template ngFor let-image let-i="index" [ngForOf]="productImages">
-                <img class="product-gallery-slides-item-image" 
-                    [ngClass]="{'': i == imageIndex, 'not-loaded': i != imageIndex}" [src]="image.image" alt="">
+                <img class="product-gallery-slides-item-image"
+                    [ngClass]="{'': i == imageIndex, 'not-loaded': i != imageIndex}" [src]="image" alt="">
 
             </ng-template>
         </div>
@@ -32,9 +32,9 @@
 
                 <ng-template ngFor let-image let-i="index" [ngForOf]="productImages">
 
-                    <button class="product-gallery-thumbnails-item not-loaded images" (click)="imageClick(i)">
+                    <button class="product-gallery-thumbnails-item not-loaded images clean" (click)="imageClick(i)">
                         <img class="product-gallery-thumbnails-item-image"
-                            style="width: 100%; height: 100%; object-position: 50% 50%;" [src]="image.image" alt="">
+                            style="width: 100%; height: 100%; object-position: 50% 50%;" [src]="image" alt="">
                     </button>
 
                 </ng-template>
@@ -45,34 +45,33 @@
 
     <section class="product-details">
         <h1 class="product-details-title" #bookName>
-            The Original Book
+            {{product.name}}
         </h1>
         <div class="product-details-checkout">
             <div class="product-product-price">
                 <div class="product-price">
-                    <span class="money">45.00</span>
+                    <span class="money">{{product.price}}</span>
                 </div>
-            </div>
+            </div> 
 
             <div class="product-quantity-input">
                 <div class="quantity-label">Quantity:</div>
                 <input aria-label="Quantity" #quantity size="4" max="9999" min="1" value="1" type="number" step="1">
             </div>
 
-            <button class="accept" (click)="addToCart(quantity.value, bookName.innerHTML)">
+            <button class="accept" (click)="addToCart(quantity.value, product)">
                 <span>Add To Cart</span>
             </button>
 
             <div class="product-details-excerpt">
                 <p class=""></p>
-                <p class="" style="white-space:pre-wrap;"><em>by Kevin Matsuya</em></p>
-                <p class="" style="white-space:pre-wrap;">This is a first edition book about design from an
-                    award-winning author. It was on several Best of the Year lists.</p>
+                <p class="" style="white-space:pre-wrap;">by {{product.artist}}</p>
+                <p class="" style="white-space:pre-wrap;">{{product.description}}</p>
                 <p class="" style="white-space:pre-wrap;">-</p>
-                <p class="" style="white-space:pre-wrap;"><strong>Publication Date: </strong>March 3,
-                    2020<br><strong>Book Size: </strong>8 x 11<strong><br>Format:
-                    </strong>Hardcover<strong><br>ISBN:
-                    </strong>000-0-0000-0000-0<br><br><em>*Ships within 2-4 business days</em></p>
+                <p class="" style="white-space:pre-wrap;"><strong>Publication Date:
+                    </strong>{{product.date}}<br><strong>Type: </strong>{{product.type}}<strong><br>Genre:
+                    </strong>{{product.genre}}<strong><br>Label:
+                    </strong>{{product.label}}<br><br><em>*Ships within 2-4 business days</em></p>
             </div>
 
         </div>

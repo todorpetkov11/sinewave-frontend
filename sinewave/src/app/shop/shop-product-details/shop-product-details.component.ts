@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Route } from '@angular/router';
 import * as Aos from 'aos';
+import { Product } from 'src/app/interfaces/product';
 import { CartService } from 'src/app/services/cart.service';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-shop-product-details',
@@ -9,10 +12,21 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ShopProductDetailsComponent implements OnInit {
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private productService: ProductService, private router: ActivatedRoute) { }
+
+  public product: Product;
+  public productImages: string[] = [];
 
   ngOnInit(): void {
     Aos.init()
+    this.productService.getProductById(this.router.snapshot.paramMap.get('id')!).subscribe({
+      next: (product) => {
+        this.productImages.push(product.firstImage, product.secondImage)
+        this.product = product
+        console.log(product)
+        console.log(this.productImages)
+      }
+    })
   }
 
   imageIndex: number = 0;
@@ -40,8 +54,8 @@ export class ShopProductDetailsComponent implements OnInit {
     this.imageIndex = index
   }
 
-  addToCart(quantity: string, bookName: string) {
-    this.cartService.addToCart(Number(quantity), bookName)
+  addToCart(quantity: string, product: Product) {
+    this.cartService.addToCart(Number(quantity), product)
     this.itemAdded = true;
     setTimeout(() => {
       this.itemAdded = false;
@@ -52,22 +66,5 @@ export class ShopProductDetailsComponent implements OnInit {
     this.cartService.removeFromCartPopUp()
     this.itemAdded = false;
   }
-
-  productImages = [{
-    image: 'https://images.squarespace-cdn.com/content/v1/624b503a204884599f31416a/1649102914874-6YLWE3UUH9U8RK1UD78Z/The-Original-Book_3.jpg?format=1500w',
-    alt: 'alt of image',
-    thumbImage: 'https://images.squarespace-cdn.com/content/v1/624b503a204884599f31416a/1649102914874-6YLWE3UUH9U8RK1UD78Z/The-Original-Book_3.jpg?format=1500w',
-  },
-  {
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png',
-    alt: 'alt of image',
-    thumbImage: 'https://images.squarespace-cdn.com/content/v1/624b503a204884599f31416a/1649102914881-QCG5UCYLM7CHTD3HYBZT/The-Original-Book_1.jpg?format=1500w',
-  },
-  {
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png',
-    alt: 'alt of image',
-    thumbImage: 'https://images.squarespace-cdn.com/content/v1/624b503a204884599f31416a/1649102914881-QCG5UCYLM7CHTD3HYBZT/The-Original-Book_1.jpg?format=1500w',
-  }
-  ];
 
 }
