@@ -13,6 +13,12 @@ export class ShopProductComponent implements OnInit {
   @Input() album: Product
 
   ngOnInit(): void {
+
+    // TODO: URL on Change detection
+    // TODO: URL on Change detection
+    // TODO: URL on Change detection
+    // TODO: URL on Change detection
   }
+
 
 }

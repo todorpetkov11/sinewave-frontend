@@ -23,8 +23,6 @@ export class ShopProductDetailsComponent implements OnInit {
       next: (product) => {
         this.productImages.push(product.firstImage, product.secondImage)
         this.product = product
-        console.log(product)
-        console.log(this.productImages)
       }
     })
   }

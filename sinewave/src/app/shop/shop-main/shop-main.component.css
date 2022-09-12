@@ -59,5 +59,13 @@
         grid-column-gap: 1vw;
         grid-row-gap: 3.5vw;
         padding: 0;
+    }
+
+    .shop-nav-list {
+        width: 10%;
+    }
+
+    .products-flex-container {
+        width: 90%;
     }   
 }

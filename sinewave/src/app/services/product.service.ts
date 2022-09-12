@@ -20,4 +20,8 @@ export class ProductService {
   getProductById(id: string): Observable<Product> {
     return this.http.get<Product>(`${backendUrl}/albums/${id}`)
   }
+
+  getRelatedProducts(param: string): Observable<Product[]> {
+    return this.http.get<Product[]>(`${backendUrl}/albums?category=:${param}`)
+  }
 }

@@ -4,47 +4,21 @@
     </h1>
 
     <div class="list-grid" data-aos="fade-down" data-aos-duration="1000">
-        <div class="grid-item">
+        <div class="grid-item" routerLink="/shop/p/{{product.id}}" *ngFor="let product of relatedProducts">
             <div class="grid-image-wrapper">
-                <img class="grid-image-cover"
-                    src="https://images.squarespace-cdn.com/content/v1/624b503a204884599f31416a/1649102914438-NFC24YNFFCWO6US7OIJW/On-Flight_1.jpg?format=300w">
-                <img class="grid-image"
-                    src="https://images.squarespace-cdn.com/content/v1/624b503a204884599f31416a/1649102914671-84YDLRMRQQ43Z7INRMWV/Apperaturability_1.jpg?format=300w">
+                <img class="grid-image-cover" [src]="product.firstImage">
+                <img class="grid-image" [src]="product.secondImage">
             </div>
             <section class="grid-meta-wrapper">
                 <div class="grid-main-meta">
-                    <div class="product-title">Apperaturability</div>
+                    <div class="product-title">{{product.name}}</div>
                     <div class="product-price">
-                        <span class="money">50.00</span>
+                        <span class="money">{{product.price}}</span>
                     </div>
                 </div>
                 <div class="grid-meta-status">
                 </div>
             </section>
-            <a href="/shop/p/apperaturability" class="grid-item-link"></a>
-        </div>
-        <div class="grid-item" id="thumb-on-flight">
-
-            <div class="grid-image-wrapper has-hover-img">
-
-                <img class="grid-image-cover"
-                    src="https://images.squarespace-cdn.com/content/v1/624b503a204884599f31416a/1649102914438-NFC24YNFFCWO6US7OIJW/On-Flight_1.jpg?format=300w">
-
-                <img class="grid-image"
-                    src="https://images.squarespace-cdn.com/content/v1/624b503a204884599f31416a/1649102914430-TLO6JIB4U70YWB4868ZP/On-Flight_t.jpg?format=300w">
-            </div>
-
-            <section class="grid-meta-wrapper" data-animation-role="content">
-                <div class="grid-main-meta">
-                    <div class="product-title" d>On Flight</div>
-                    <div class="product-price">
-                        <span class="money">25.00</span>
-                    </div>
-                </div>
-                <div class="grid-meta-status">
-                </div>
-            </section>
-            <a href="/shop/p/on-flight" class="grid-item-link"></a>
         </div>
     </div>
 </section>

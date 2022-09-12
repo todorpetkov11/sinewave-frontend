@@ -20,7 +20,6 @@ export class ShopMainComponent implements OnInit {
     this.productService.getProducts().subscribe({
       next: (product) => {
         this.albumArray = product
-        console.log(this.albumArray)
       }
     })
   }

@@ -8,11 +8,11 @@ const routes: Routes = [
     children: [
       { path: '', component: ShopMainComponent },
       { path: 'p/:id', component: ShopProductDetailsComponent },
-      // { path: 'staff-pick' },
-      // { path: 'books' },
-      // { path: 'magazines' },
-      // { path: 'accessories' },
-      // { path: 'sale' },
+      { path: 'staff-pick' },
+      { path: 'books' },
+      { path: 'magazines' },
+      { path: 'accessories' },
+      { path: 'sale' },
     ]
   },
 
