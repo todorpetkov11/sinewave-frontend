@@ -20,8 +20,6 @@ export class ShopProductRelatedComponent implements OnInit {
     this.productService.getRelatedProducts(this.param).subscribe({
       next: (products) => {
         this.relatedProducts = products
-        console.log(products)
-        console.log(this.relatedProducts)
       }
     })
   }

@@ -5,6 +5,7 @@ import { PageAboutComponent } from './page-about/page-about.component';
 import { PageHomeComponent } from './page-home/page-home.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { PageContactComponent } from './page-contact/page-contact.component';
 
 
 
@@ -12,7 +13,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     PageCartComponent,
     PageAboutComponent,
-    PageHomeComponent
+    PageHomeComponent,
+    PageContactComponent
   ],
   imports: [
     CommonModule,

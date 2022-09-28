@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Router, Event, NavigationEnd, NavigationError, NavigationStart } from '@angular/router';
 import * as Aos from 'aos';
 import { Product } from 'src/app/interfaces/product';
 import { CartService } from 'src/app/services/cart.service';
@@ -12,23 +12,37 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ShopProductDetailsComponent implements OnInit {
 
-  constructor(private cartService: CartService, private productService: ProductService, private router: ActivatedRoute) { }
+  constructor(private cartService: CartService, private productService: ProductService, private activatedRoute: ActivatedRoute,
+    private router: Router) {
+
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        Aos.init()
+        this.getProduct()
+      }
+    });
+
+  };
 
   public product: Product;
   public productImages: string[] = [];
+  public imageIndex: number = 0;
+  public itemAdded: boolean = false;
 
   ngOnInit(): void {
     Aos.init()
-    this.productService.getProductById(this.router.snapshot.paramMap.get('id')!).subscribe({
+    this.getProduct();
+  }
+
+  getProduct() {
+    this.productService.getProductById(this.activatedRoute.snapshot.paramMap.get('id')!).subscribe({
       next: (product) => {
+        this.productImages = [];
         this.productImages.push(product.firstImage, product.secondImage)
         this.product = product
       }
     })
   }
-
-  imageIndex: number = 0;
-  public itemAdded: boolean = false;
 
   prevClick() {
     if (this.imageIndex == 0) {

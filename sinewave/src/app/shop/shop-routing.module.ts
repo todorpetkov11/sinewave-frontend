@@ -6,13 +6,16 @@ const routes: Routes = [
   {
     path: 'shop',
     children: [
-      { path: '', component: ShopMainComponent },
+      {
+        path: '', component: ShopMainComponent, children: [
+          { path: 'staff-picks', component: ShopMainComponent },
+          { path: 'books', component: ShopMainComponent },
+          { path: 'magazines', component: ShopMainComponent },
+          { path: 'accessories', component: ShopMainComponent },
+          { path: 'sale', component: ShopMainComponent },
+        ]
+      },
       { path: 'p/:id', component: ShopProductDetailsComponent },
-      { path: 'staff-pick' },
-      { path: 'books' },
-      { path: 'magazines' },
-      { path: 'accessories' },
-      { path: 'sale' },
     ]
   },
 

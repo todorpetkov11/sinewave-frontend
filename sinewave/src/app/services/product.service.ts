@@ -22,6 +22,6 @@ export class ProductService {
   }
 
   getRelatedProducts(param: string): Observable<Product[]> {
-    return this.http.get<Product[]>(`${backendUrl}/albums?category=:${param}`)
+    return this.http.get<Product[]>(`${backendUrl}/albums?genre=${param}`)
   }
 }
